@@ -14,7 +14,6 @@
 \setlength{\topmargin}{-1cm}                                     %
 \setlength{\oddsidemargin}{0.1cm}                                %
 \setlength{\evensidemargin}{\oddsidemargin}                      %
-\usepackage{fancyhdr}           %使用页眉-页脚                   %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \usepackage{authblk}					 %作者地址和E-mail
@@ -137,7 +136,7 @@
 \newcommand{\qihao}{\fontsize{5.25pt}{\baselineskip}\selectfont}    %七号  
 
 %%%%%%%%%%%%%%%%%%%%%  % 插图使用位置  %%%%%%%%%%%%%%%%%%%%%%%%%%%
-\graphicspath{{Presentation_Beamer/}}                            %
+\graphicspath{{Figures/}}                            %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \usepackage{verbatim}			%Verbatim 宏包重新实现了 Verbatim 环境，并且提供一个命令可以导入一个 ASCII 文件到文档中
@@ -185,8 +184,9 @@
 \date{} % 去掉日期									     %
 %\date{2020-12-30}									     %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{document}
+
 %%%%%%%%%%%%%%%%%%%%%  % 页眉-页脚设计  %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fancyhdr}           %使用页眉-页脚                   %
 %%\renewcommand{\headrulewidth}{3pt} %页眉(单)线宽(默认黑色)，设为0可以去页眉线
 %\makeatletter % 双线页眉
 %\def\headrule{\color{blue}{\if@fancyplain\let\headrulewidth\plainheadrulewidth\fi%
@@ -203,10 +203,12 @@
 %  \vspace{2mm}}
 %\makeatother
 
-%\pagestyle{fancy}    %与文献引用超链接style有冲突
+%\pagestyle{fancy}
+\lhead{} %页眉左边位置内容，并加粗 
 %\lhead{\bfseries Result} %页眉左边位置内容，并加粗 
 %\chead{} % 页眉中间位置内容
 %\rhead{\includegraphics[scale=0.20]{Figures/BCC_logo-1.png}}%在此处插入logo.pdf图片 图片靠右
+\rhead{} % 页眉中间位置内容
 %\lfoot{}  %页脚
 %\rule{\temptablewidth}{1pt}
 %\cfoot{}
@@ -219,6 +221,8 @@
 %% myheadings 页眉内容可自定义，无页脚
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{document}
+
 %\begin{CJK}{UTF8}{gbsn} %针对文字编码为unix %CJK自带的utf-8简体字体有gbsn(宋体)和gkai(楷体)
 %\begin{CJK}{GBK}{hei}	%针对文字编码为doc
 %\begin{CJK}{GBK}{hei}	 %针对文字编码为doc
@@ -229,7 +233,8 @@
 \renewcommand{\contentsname}{\centering\CJKfamily{hei} 目~~~录}
 \renewcommand{\refname}{\centering\CJKfamily{hei} 主~要~参~考~资~料}
 %\renewcommand{\figurename}{\CJKfamily{hei} 图.}
-\renewcommand{\figurename}{{\bf Fig}.}
+%\renewcommand{\figurename}{{\bf Fig}.}
+\renewcommand{\figurename}{}
 %\renewcommand{\tablename}{\CJKfamily{hei} 表.}
 \renewcommand{\tablename}{{\bf Tab}.}
 %\renewcommand{\thesubfigure}{\roman{subfigure}}  \makeatletter %子图标记罗马字母
@@ -237,18 +242,18 @@
 %\renewcommand{\thesubfigure}{}  \makeatletter　%子图无标记
 
 %将图表的Caption写成 图(表) Num. 格式
-\makeatletter
-\long\def\@makecaption#1#2{%
-  \vskip\abovecaptionskip
-  \sbox\@tempboxa{#1. #2}%
-  \ifdim \wd\@tempboxa >\hsize
-    #1. #2\par
-  \else
-    \global \@minipagefalse
-    \hb@xt@\hsize{\hfil\box\@tempboxa\hfil}%
-  \fi
-  \vskip\belowcaptionskip}
-\makeatother
+%\makeatletter
+%\long\def\@makecaption#1#2{%
+%  \vskip\abovecaptionskip
+%  \sbox\@tempboxa{#1. #2}%
+%  \ifdim \wd\@tempboxa >\hsize
+%    #1. #2\par
+%  \else
+%    \global \@minipagefalse
+%    \hb@xt@\hsize{\hfil\box\@tempboxa\hfil}%
+%  \fi
+%  \vskip\belowcaptionskip}
+%\makeatother
 
 \newcommand{\keywords}[1]{{\hspace{0pt}\small{\CJKfamily{hei} 关键词:}{\hspace{2ex}{#1}}\bigskip}}
 
@@ -289,14 +294,70 @@
 %The content of the abstract
 %\end{abstract}
 
+\newpage
+\pagestyle{empty}    % 清空页码                                      %
+\begin{figure}[h!]
+\centering
+\vspace{+0.2in}
+\includegraphics[height=1.20\textwidth,width=0.82\textwidth,viewport=0 0 360 520,clip]{Liu_Zengfu.jpg}
+\caption*{\hei 刘曾复~教授~~(1914.11.9-2012.6.27)}
+\label{Liu_Zengfu}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+%\vspace{+0.2in}
+\includegraphics[height=1.38\textwidth,width=1.0\textwidth,viewport=0 0 1050 1550,clip]{Liu-Wu.png}
+\caption*{\hei 刘曾复~先生~和~吴小如~先生}
+\label{Collect_Liu_Wu}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+%\vspace{-10.5pt}
+\includegraphics[height=0.60\textwidth,width=1.0\textwidth,viewport=0 0 500 300,clip]{Zhu-Liu.jpg}
+\caption*{\hei 朱家溍~先生~和~刘曾复~先生}
+\label{Collect_Zhu_Wu}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+%\vspace{-10.5pt}
+\includegraphics[height=0.60\textwidth,width=1.0\textwidth,viewport=0 0 500 300,clip]{Collect_Zhu-Liu-Wu-Wang.jpg}
+\caption*{\hei 左起:~刘曾复~先生、朱家溍~先生、吴小如~先生、王金璐~先生~等~合影}
+\label{Collect_Wang}
+\end{figure}
 %\keywords{Keyword1; Keyword2; Keyword3}
 
-\pagenumbering{roman}
-\setcounter{page}{0}
+\begin{figure}[h!]
+\centering
+\vspace{-0.7in}
+\includegraphics[height=0.68\textwidth,width=0.40\textwidth,viewport=0 0 950 1300,clip]{PekOpe_Liu-1.jpg}
+\caption*{\hei 刘曾复~先生抄录的《取金陵》曹良臣的单词}
+\label{Script}
+\end{figure}
+
+\begin{figure}[hbtp!]
+\hspace*{-0.5in}
+\begin{minipage}[t]{0.53\textwidth}
+	\centering
+	\includegraphics[height=1.00\textwidth,width=1.20\textwidth,viewport=0 0 1750 1300,clip]{PekOpe_Liu-2.jpg}
+	\caption*{\hei \fontsize{8.5pt}{4.0pt}\selectfont{左:~刘曾复~先生保存的部分说戏录音磁带}}
+\end{minipage}
+\hspace{0.6in}
+\begin{minipage}[t]{0.43\textwidth}
+	\centering
+	\vspace{-3.7in}
+	\includegraphics[height=1.10\textwidth,width=1.70\textwidth,angle=270, viewport=0 0 2750 1950,clip]{PekOpe_Wu-5.jpg}
+	\caption*{\hei \fontsize{8.5pt}{4.0pt}\selectfont{右:吴小如~先生保存的刘曾复先生的说戏录音磁带}}
+\end{minipage}
+\label{Records}
+\end{figure}
+
 \include{Data/00}
 %-------------------------------------------------------------------------------The Content of The Paper----------------------------------------------------------------------------------------------%
 \newpage
-%\thispagestyle{fancy}   % 插入页眉页脚                                        %
+\pagestyle{plain}   % 删除页眉                                        %
 \addcontentsline{toc}{subsection}{\CJKfamily{hei} 目~录}
 \tableofcontents %% 制作目录(目录是根据标题自动生成的)
 %-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------%
@@ -452,12 +513,13 @@
 %-----------------------------------------------------------------------------------------------------------------------------------------------------------------------%
 %\phantomsection\addcontentsline{toc}{section}{Bibliography} %直接调用\addcontentsline命令可能导致超链指向不准确,一般需要在之前调用一次\phantomsection命令加以修正%
 \phantomsection\addcontentsline{toc}{subsection}{\CJKfamily{hei} 主要参考资料} %直接调用\addcontentsline命令可能导致超链指向不准确,一般需要在之前调用一次\phantomsection命令加以修正%
+\thispagestyle{plain}
 %\bibliography{../ref/Myref_from_2013}   %
-%\bibliography{/home/jun-jiang/Documents/Peking_Opera/Peking_Opera}   %
-\bibliography{/home/jun_jiang/Documents/Reports_Book/thuthesis-master/Peking_Opera/Peking_Opera}   %
+\bibliography{/home/jun-jiang/Documents/Peking_Opera/Peking_Opera}   %
+%\bibliography{/home/jun_jiang/Documents/Reports_Book/thuthesis-master/Peking_Opera/Peking_Opera}   %
 %\bibliography{/home/jun-jiang/Documents/ref/Myref} %% 接近ieeert样式
-%\bibliographystyle{/home/jun-jiang/Documents/ref/mybib} %% 接近ieeert样式
-\bibliographystyle{/home/jun_jiang/Documents/Latex_art_beamer/ref/mybib} %% 接近ieeert样式
+\bibliographystyle{/home/jun-jiang/Documents/ref/mybib} %% 接近ieeert样式
+%\bibliographystyle{/home/jun_jiang/Documents/Latex_art_beamer/ref/mybib} %% 接近ieeert样式
 %\bibliographystyle{../ref/mybib} %% 接近ieeert样式
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%      \bibliographystyle         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%      LaTeX 参考文献标准选项及其样式共有以下8种：                                %%%%%%%%
