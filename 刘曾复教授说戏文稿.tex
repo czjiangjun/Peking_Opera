@@ -1,4 +1,4 @@
-\documentclass[10pt, oneside, a4paper]{article}      % Specifies the document class
+\documentclass[12pt, oneside, a4paper]{article}      % Specifies the document class
 %\documentclass[10pt, twoside, a4paper]{article}      % Specifies the document class
 
 %%%%%%%%%%%%%%%%% CJK 中文版面控制  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -52,7 +52,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \usepackage[numbers,sort&compress]{natbib} %紧密排列             %
-\usepackage[sectionbib]{chapterbib}        %每章节单独参考文献   %
+%\usepackage[sectionbib]{chapterbib}        %每章节单独参考文献   %
 %\usepackage{footbib}			   %脚注列出参考文献　   %
 \usepackage{hypernat}                                                                         %
 %\usepackage[dvipdfm,bookmarksopen=true,pdfstartview=FitH,CJKbookmarks]{hyperref}              %
@@ -154,11 +154,12 @@
 %%%%%%%%%%%%%%%%%%%  说戏剧本集特殊设置   %%%%%%%%%%%%%%%%%%%%%%
 \setcounter{secnumdepth}{0} % 此处设置
 \usepackage[center]{titlesec}
+\setcounter{tocdepth}{2}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% 用 authblk 包 支持作者和E-mail %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\title{More than one Author with different Affiliations}				     %
-\title{\hei\huge{刘曾复教授说戏剧本集文稿}}
+\title{\hei\Huge{刘曾复教授说戏剧本集文稿}}
 %\author[a]{Author A}									     %
 \author[]{}   %
 %\author[a]{Author B}									     %
@@ -225,6 +226,7 @@
 %\indent
 %
 \renewcommand{\abstractname}{\small{\CJKfamily{hei} 摘\quad 要}} %\CJKfamily{hei} 设置中文字体，字号用\big \small来设
+\renewcommand{\contentsname}{\centering\CJKfamily{hei} 目~~~录}
 \renewcommand{\refname}{\centering\CJKfamily{hei} 主~要~参~考~资~料}
 %\renewcommand{\figurename}{\CJKfamily{hei} 图.}
 \renewcommand{\figurename}{{\bf Fig}.}
@@ -279,6 +281,7 @@
 %----------------------------------------------------------------------------------------------%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \maketitle
+\thispagestyle{empty}    % 清空页码                                      %
 %\thispagestyle{fancy}   % 首页插入页眉页脚 
 
 %-------------------------------------------------------------------------------The Abstract and the keywords of The Paper----------------------------------------------------------------------------%
@@ -288,13 +291,17 @@
 
 %\keywords{Keyword1; Keyword2; Keyword3}
 
+\pagenumbering{roman}
+\setcounter{page}{0}
 \include{Data/00}
 %-------------------------------------------------------------------------------The Content of The Paper----------------------------------------------------------------------------------------------%
+\newpage
+%\thispagestyle{fancy}   % 插入页眉页脚                                        %
+\addcontentsline{toc}{subsection}{\CJKfamily{hei} 目~录}
 \tableofcontents %% 制作目录(目录是根据标题自动生成的)
 %-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------%
 
-\newpage	        % 每个新的/newpage 即可有新的\thispagestyle 引领      %
-\thispagestyle{fancy}   % 插入页眉页脚                                        %
+\include{Data/01}
 %----------------------------------------------------------------------------------------The Body Of The Paper----------------------------------------------------------------------------------------%
 %Introduction
 
@@ -302,6 +309,16 @@
 %导言
 %\section{正文章节}
 %参考文献的引用方式1\upcite{QCQC_2014}
+\pagenumbering{arabic}
+\include{Data/02}
+\include{Data/03}
+\include{Data/04}
+\include{Data/05}
+\include{Data/06}
+\include{Data/07}
+\include{Data/08}
+\include{Data/09}
+\include{Data/10}
 %-------------------The Figure Of The Paper------------------
 %\begin{figure}[h!]
 %\centering
@@ -433,11 +450,14 @@
 %	\bibitem{PAW-dataset} \textrm{姜骏}，\textrm{PAW原子数据集的构造与检验}, \textit{中国化学会第十二届全国量子化学会议论文摘要集}，\textbf{太原}，(2014).
 %\end{thebibliography}																			%
 %-----------------------------------------------------------------------------------------------------------------------------------------------------------------------%
-\phantomsection\addcontentsline{toc}{section}{Bibliography} %直接调用\addcontentsline命令可能导致超链指向不准确,一般需要在之前调用一次\phantomsection命令加以修正%
+%\phantomsection\addcontentsline{toc}{section}{Bibliography} %直接调用\addcontentsline命令可能导致超链指向不准确,一般需要在之前调用一次\phantomsection命令加以修正%
+\phantomsection\addcontentsline{toc}{subsection}{\CJKfamily{hei} 主要参考资料} %直接调用\addcontentsline命令可能导致超链指向不准确,一般需要在之前调用一次\phantomsection命令加以修正%
 %\bibliography{../ref/Myref_from_2013}   %
-\bibliography{/home/jun-jiang/Documents/Peking_Opera/Peking_Opera}   %
+%\bibliography{/home/jun-jiang/Documents/Peking_Opera/Peking_Opera}   %
+\bibliography{/home/jun_jiang/Documents/Reports_Book/thuthesis-master/Peking_Opera/Peking_Opera}   %
 %\bibliography{/home/jun-jiang/Documents/ref/Myref} %% 接近ieeert样式
-\bibliographystyle{/home/jun-jiang/Documents/ref/mybib} %% 接近ieeert样式
+%\bibliographystyle{/home/jun-jiang/Documents/ref/mybib} %% 接近ieeert样式
+\bibliographystyle{/home/jun_jiang/Documents/Latex_art_beamer/ref/mybib} %% 接近ieeert样式
 %\bibliographystyle{../ref/mybib} %% 接近ieeert样式
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%      \bibliographystyle         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%      LaTeX 参考文献标准选项及其样式共有以下8种：                                %%%%%%%%
