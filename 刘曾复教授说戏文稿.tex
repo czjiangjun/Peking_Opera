@@ -294,67 +294,9 @@
 %The content of the abstract
 %\end{abstract}
 
-\newpage
-\pagestyle{empty}    % 清空页码                                      %
-\begin{figure}[h!]
-\centering
-\vspace{+0.2in}
-\includegraphics[height=1.20\textwidth,width=0.82\textwidth,viewport=0 0 360 520,clip]{Liu_Zengfu.jpg}
-\caption*{\hei 刘曾复~教授~~(1914.11.9-2012.6.27)}
-\label{Liu_Zengfu}
-\end{figure}
+%\include{Data/chap-Photoes}
 
-\begin{figure}[h!]
-\centering
-%\vspace{+0.2in}
-\includegraphics[height=1.38\textwidth,width=1.0\textwidth,viewport=0 0 1050 1550,clip]{Liu-Wu.png}
-\caption*{\hei 刘曾复~先生~和~吴小如~先生}
-\label{Collect_Liu_Wu}
-\end{figure}
-
-\begin{figure}[h!]
-\centering
-%\vspace{-10.5pt}
-\includegraphics[height=0.60\textwidth,width=1.0\textwidth,viewport=0 0 500 300,clip]{Zhu-Liu.jpg}
-\caption*{\hei 朱家溍~先生~和~刘曾复~先生}
-\label{Collect_Zhu_Wu}
-\end{figure}
-
-\begin{figure}[h!]
-\centering
-%\vspace{-10.5pt}
-\includegraphics[height=0.60\textwidth,width=1.0\textwidth,viewport=0 0 500 300,clip]{Collect_Zhu-Liu-Wu-Wang.jpg}
-\caption*{\hei 左起:~刘曾复~先生、朱家溍~先生、吴小如~先生、王金璐~先生~等~合影}
-\label{Collect_Wang}
-\end{figure}
-%\keywords{Keyword1; Keyword2; Keyword3}
-
-\begin{figure}[h!]
-\centering
-\vspace{-0.7in}
-\includegraphics[height=0.68\textwidth,width=0.50\textwidth,viewport=0 0 950 1300,clip]{PekOpe_Liu-1.jpg}
-\caption*{\hei 刘曾复~先生~抄录的《取金陵》曹良臣的单词}
-\label{Script}
-\end{figure}
-
-\begin{figure}[hbtp!]
-\hspace*{-0.5in}
-\begin{minipage}[t]{0.53\textwidth}
-	\centering
-	\includegraphics[height=1.00\textwidth,width=1.20\textwidth,viewport=0 0 1750 1300,clip]{PekOpe_Liu-2.jpg}
-	\caption*{\hei \fontsize{8.5pt}{4.0pt}\selectfont{左:~刘曾复~先生~保存的部分说戏录音磁带}}
-\end{minipage}
-\hspace{0.6in}
-\begin{minipage}[t]{0.43\textwidth}
-	\centering
-	\vspace{-3.7in}
-	\includegraphics[height=1.10\textwidth,width=1.70\textwidth,angle=270, viewport=0 0 2750 1950,clip]{PekOpe_Wu-5.jpg}
-	\caption*{\hei \fontsize{8.5pt}{4.0pt}\selectfont{右:吴小如~先生~保存的刘曾复先生的说戏录音磁带}}
-\end{minipage}
-\label{Records}
-\end{figure}
-
-\include{Data/chap-illustration}
+%\include{Data/chap-illustration}
 %-------------------------------------------------------------------------------The Content of The Paper----------------------------------------------------------------------------------------------%
 \newpage
 \pagestyle{plain}   % 删除页眉                                        %
@@ -372,7 +314,7 @@
 %\section{正文章节}
 %参考文献的引用方式1\upcite{QCQC_2014}
 \pagenumbering{arabic}
-\include{Data/chap-01}
+%\include{Data/chap-01}
 %\include{Data/chap-02}
 %\include{Data/chap-03}
 %\include{Data/chap-04}
@@ -381,6 +323,10 @@
 %\include{Data/chap-07}
 %\include{Data/chap-08}
 %\include{Data/chap-09}
+
+%%%%%%%%%%  FOR TEST %%%%%%%%%%%%
+\input{Data/chap-02-15}         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %-------------------The Figure Of The Paper------------------
 %\begin{figure}[h!]
 %\centering
@@ -505,35 +451,8 @@
 
 %--------------------------------------------------------------------------The Biblography of The Paper-----------------------------------------------------------------%
 %\newpage																				%
+\include{Data/chap-Bibliography}
 %-----------------------------------------------------------------------------------------------------------------------------------------------------------------------%
-%\begin{thebibliography}{99}																		%
-%%\bibitem{PRL58-65_1987}H.Feil, C. Haas, {\it Phys. Rev. Lett.} {\bf 58}, 65 (1987).											%
-%	\bibitem{kp-method} \textrm{Zhenxi Pan, Yong Pan, Jun Jiang$^{\ast}$, Liutao Zhao}, \textrm{High-Throughput Electronic Band Structure Calculations for Hexaborides}, \textit{Intelligent Computing}, \textbf{Springer}, \textbf{P.386-395}, (2019).%
-%	\bibitem{PAW-dataset} \textrm{姜骏}，\textrm{PAW原子数据集的构造与检验}, \textit{中国化学会第十二届全国量子化学会议论文摘要集}，\textbf{太原}，(2014).
-%\end{thebibliography}																			%
-%-----------------------------------------------------------------------------------------------------------------------------------------------------------------------%
-%\phantomsection\addcontentsline{toc}{section}{Bibliography} %直接调用\addcontentsline命令可能导致超链指向不准确,一般需要在之前调用一次\phantomsection命令加以修正%
-\phantomsection\addcontentsline{toc}{subsection}{\CJKfamily{hei} 主要参考资料} %直接调用\addcontentsline命令可能导致超链指向不准确,一般需要在之前调用一次\phantomsection命令加以修正%
-\thispagestyle{plain}
-%\bibliography{../ref/Myref_from_2013}   %
-\bibliography{/home/jun-jiang/Documents/Peking_Opera/Peking_Opera}   %
-%\bibliography{/home/jun_jiang/Documents/Reports_Book/thuthesis-master/Peking_Opera/Peking_Opera}   %
-%\bibliography{/home/jun-jiang/Documents/ref/Myref} %% 接近ieeert样式
-\bibliographystyle{/home/jun-jiang/Documents/ref/mybib} %% 接近ieeert样式
-%\bibliographystyle{/home/jun_jiang/Documents/Latex_art_beamer/ref/mybib} %% 接近ieeert样式
-%\bibliographystyle{../ref/mybib} %% 接近ieeert样式
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%      \bibliographystyle         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%      LaTeX 参考文献标准选项及其样式共有以下8种：                                %%%%%%%%
-% plain，按字母的顺序排列，比较次序为作者、年度和标题.
-% unsrt，样式同plain，只是按照引用的先后排序.
-% alpha，用作者名首字母+年份后两位作标号，以字母顺序排序.
-% abbrv，类似plain，将月份全拼改为缩写，更显紧凑.
-% ieeetr，国际电气电子工程师协会期刊样式.
-% acm，美国计算机学会期刊样式.
-% siam，美国工业和应用数学学会期刊样式.
-% apalike，美国心理学学会期刊样式.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%  \nocite{*}																				%
 %-----------------------------------------------------------------------------------------------------------------------------------------------------------------------%
 
 %-------------------------------------------------------------------------Thanks------------------------------------------------------------------------------------------------
