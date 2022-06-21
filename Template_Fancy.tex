@@ -1,0 +1,36 @@
+%%%%%%%%%%%%%%%%%%%%%  % 页眉-页脚设计  %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fancyhdr}           %使用页眉-页脚                   %
+%%\renewcommand{\headrulewidth}{3pt} %页眉(单)线宽(默认黑色)，设为0可以去页眉线
+%\makeatletter % 双线页眉
+%\def\headrule{\color{blue}{\if@fancyplain\let\headrulewidth\plainheadrulewidth\fi%
+%\hrule\@height 0.5pt \@width\headwidth\vskip1pt %上面线为0.5pt粗
+%\hrule\@height 3.0pt\@width\headwidth  %下面3pt粗
+%\vskip-2\headrulewidth\vskip-1pt}      %两条线的距离1pt
+%  \vspace{6mm}}     %双线与下面正文之间的垂直间距
+%\makeatother
+
+%%\renewcommand{\footrulewidth}{3pt} %页脚线宽(默认黑色)，设为0可以去页脚线
+%\makeatletter % 双线页眉
+%\def\footrule{{\color{blue}{\if@fancyplain\let\footrulewidth\plainfootrulewidth\fi%
+%\hrule\@height 3.0pt \@width\headwidth}}
+%  \vspace{2mm}}
+%\makeatother
+
+\pagestyle{fancy}    %与文献引用超链接style有冲突
+%\lhead{\bfseries Result} %页眉左边位置内容，并加粗 
+\lhead{} %页眉左边位置内容，并加粗 
+%\chead{} % 页眉中间位置内容
+%\rhead{\includegraphics[scale=0.20]{Figures/BCC_logo-1.png}}%在此处插入logo.pdf图片 图片靠右
+\rhead{} % 页眉中间位置内容
+%\lfoot{}  %页脚
+%\rule{\temptablewidth}{1pt}
+%\cfoot{}
+%\rfoot{}
+%\fancyfoot[C]{} %去掉页码
+%%%%%%%%%%%%%%%%%  % pagestyleR常用格式  %%%%%%%%%%%%%%%%%%%%%%%%%
+%% empty 无页眉页脚
+%% plain 无页眉，页脚为居中页码
+%% headings 页眉为章节标题，无页脚
+%% myheadings 页眉内容可自定义，无页脚
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+

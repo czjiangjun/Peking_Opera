@@ -1,0 +1,51 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 用 authblk 包 支持作者和E-mail %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\title{More than one Author with different Affiliations}				     %
+\title{\hei\Huge{刘曾复教授说戏剧本集文稿}}
+%\author[a]{Author A}									     %
+\author[]{}   %
+%\author[a]{Author B}									     %
+%\author[a]{Author C \thanks{Corresponding author: email@mail.com}}			     %
+%\author[a]{Author/通讯作者 C \thanks{Corresponding author: cores-email@mail.com}}     %
+%\author[b]{Author D}									     %
+%\author[b]{Author/作者 D}									     %
+%\author[b]{Author E}									     %
+%\affil[a]{Department of Computer Science, \LaTeX\ University}				     %
+%\affil[a]{作者单位-1 \authorcr 地址}    %\authorcr表示换行
+%\affil[b]{Department of Mechanical Engineering, \LaTeX\ University}			     %
+%\affil[b]{作者单位-2}			     %
+											     %
+%%% 使用 \thanks 定义通讯作者								     %
+%%\affil命令后的{}中的内容，如果觉得需要换行的话，换行命令是\authorcr（不是\\）。
+%%Email中可以吧相同邮箱的人@前面的内容写在一个{}里，用逗号隔开。注意{和}前面要加\。例如：
+%%\affil[*]{单位1, \authorcr Email: \{zuozhe1, zuozhe2\}@yahoo.com, zuozhe3@sina.com}
+											     %
+\renewcommand*{\Authfont}{\small\rm} % 修改作者的字体与大小				     %
+\renewcommand*{\Affilfont}{\small\it} % 修改机构名称的字体与大小			     %
+\renewcommand\Authands{ and } % 去掉 and 前的逗号					     %
+\renewcommand\Authands{ , } % 将 and 换成逗号					     %
+\date{} % 去掉日期									     %
+%\date{2020-12-30}									     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%    The Title of The Paper    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\title{标题}
+%----------------------------------------------------------------------------------------------%
+%
+%----------------------The Authors and the address of The Paper--------------------------------%
+%\author{
+%作者:
+%\small
+%Author1, Author2, Author3\footnote{Communication author's E-mail} \\    %Authors' Names       %
+%\small
+%(The Address，City Post code)						%Address	       %
+%}
+%\affil[$\dagger$]{清华大学~材料加工研究所~A213}
+%\affil{清华大学~材料加工研究所~A213}
+%\date{}					%if necessary				       %
+%----------------------------------------------------------------------------------------------%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\maketitle
+\thispagestyle{empty}    % 清空页码                                      %
+%\thispagestyle{fancy}   % 首页插入页眉页脚 
+%
+%----------------------------------------------------------------------------------------------------------------------------------------------------%

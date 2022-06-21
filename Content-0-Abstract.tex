@@ -1,0 +1,61 @@
+%-------%%%%%%%% PREPARE FOR THE ABSTRACT BIBLIOGRAPH FIG. AND TAB. %%%%%%%%-----------%
+%
+%\begin{CJK}{UTF8}{gbsn} %针对文字编码为unix %CJK自带的utf-8简体字体有gbsn(宋体)和gkai(楷体)
+%\begin{CJK}{GBK}{hei}	%针对文字编码为doc
+%\begin{CJK}{GBK}{hei}	 %针对文字编码为doc
+%\CJKindent     %在CJK环境中,中文段落起始缩进2个中文字符
+%\indent
+%
+\renewcommand{\abstractname}{\small{\CJKfamily{hei} 摘\quad 要}} %\CJKfamily{hei} 设置中文字体，字号用\big \small来设
+\renewcommand{\contentsname}{\centering\CJKfamily{hei} 目~~~录}
+\renewcommand{\refname}{\centering\CJKfamily{hei} 主~要~参~考~资~料}
+%\renewcommand{\figurename}{\CJKfamily{hei} 图.}
+%\renewcommand{\figurename}{{\bf Fig}.}
+\renewcommand{\figurename}{}
+%\renewcommand{\tablename}{\CJKfamily{hei} 表.}
+\renewcommand{\tablename}{{\bf Tab}.}
+%\renewcommand{\thesubfigure}{\roman{subfigure}}  \makeatletter %子图标记罗马字母
+%\renewcommand{\thesubfigure}{\tiny(\alph{subfigure})}  \makeatletter　%子图标记英文字母
+%\renewcommand{\thesubfigure}{}  \makeatletter　%子图无标记
+%
+\newcommand{\keywords}[1]{{\hspace{0pt}\small{\CJKfamily{hei} 关键词:}{\hspace{2ex}{#1}}\bigskip}}
+%%将图表的Caption写成 图(表) Num. 格式
+%\makeatletter
+%\long\def\@makecaption#1#2{%
+%  \vskip\abovecaptionskip
+%  \sbox\@tempboxa{#1. #2}%
+%  \ifdim \wd\@tempboxa >\hsize
+%    #1. #2\par
+%  \else
+%    \global \@minipagefalse
+%    \hb@xt@\hsize{\hfil\box\@tempboxa\hfil}%
+%  \fi
+%  \vskip\belowcaptionskip}
+%\makeatother
+%
+%----------------------------------------------------------------------------------------------------------------------------------------------------%
+%
+%------%%%%%%%%%%%%%%------The Abstract and the keywords of The Paper-------%%%%%%%%%%%%%--------%
+
+%\begin{abstract}
+%The content of the abstract
+%\end{abstract}
+
+%\keywords{Keyword1; Keyword2; Keyword3}
+
+%----------------------------------------------------------------------------------------------------------------------------------------------------%
+
+\input{Data/chap-Photoes}
+%%\newpage
+\input{Data/chap-illustration}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%--------------------------------The Content of The Paper----------------------------------------%
+\newpage
+\pagestyle{plain}   % 删除页眉                                        %
+\addcontentsline{toc}{subsection}{\CJKfamily{hei} 目~录}
+\tableofcontents %% 制作目录(目录是根据标题自动生成的)
+%----------------------------------------------------------------------------------------------------------------------------------------------------%
+%
+%----------------------------------------------------------------------------------------------------------------------------------------------------%
+%

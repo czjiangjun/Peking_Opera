@@ -1,0 +1,114 @@
+\usepackage{ctex}
+%%%%%%%%%%%%%%%%% CJK 中文版面控制  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage{CJK} % CTEX-CJK 中文支持                            %
+\usepackage{xeCJK} % seperate the english and chinese		 %
+\usepackage{CJKutf8} % Texlive 中文支持                          %
+\usepackage{CJKnumb} %中文序号                                   %
+\usepackage{indentfirst} % 中文段落首行缩进                      %
+%\setlength\parindent{22pt}       % 段落起始缩进量               %
+\renewcommand{\baselinestretch}{1.2} % 中文行间距调整            %
+\setlength{\textwidth}{16cm}                                     %
+\setlength{\textheight}{24cm}                                    %
+\setlength{\topmargin}{-1cm}                                     %
+\setlength{\oddsidemargin}{0.1cm}                                %
+\setlength{\evensidemargin}{\oddsidemargin}                      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{authblk}					 %作者地址和E-mail
+\usepackage{amsmath,amsthm,amsfonts,amssymb,bm}          %数学公式
+\usepackage{mathrsfs}                                    %英文花体
+\usepackage{tikz}					 %绘制平面图形
+%\usepackage[dvipdfmx]{movie15_dvipdfmx} %插入视频
+\usepackage{xcolor}                                        %使用默认允许使用颜色
+%\usepackage{hyperref} 
+\usepackage{graphicx}
+\usepackage{subfigure}           %图片跨页
+\usepackage{animate}		 %插入动画
+\usepackage{caption}
+\captionsetup{font=footnotesize}
+
+%\usepackage[version=3]{mhchem}		%化学公式
+\usepackage{chemformula}
+\usepackage{chemfig}		%化学公式
+
+\usepackage{longtable}                                   %使用长表格
+\usepackage{multirow}
+\usepackage{makecell}		%允许单元格内换行
+
+\usepackage{arydshln}
+\newcommand{\adots}{\mathinner{\mkern2mu%
+\raisebox{0.1em}{.}\mkern2mu\raisebox{0.4em}{.}%
+\mkern2mu\raisebox{0.7em}{.}\mkern1mu}}
+
+%\usepackage{newclude}	       % 用\include*{} 实现文件插入时(两个之间)不分页
+% newclude 非必要不使用，而且要放在natbib之前，否则引用文献会报错
+
+%%%%%%%%%%%%%%%%%%%%%%%%%  参考文献引用 %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%尽量使用 BibTeX(含有超链接，数据库的条目URL即可)                %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[numbers,sort&compress]{natbib} %紧密排列              %
+%\usepackage[square,super,numbers,sort&compress]{natbib} %紧密排列%
+%\usepackage{footbib}			   %脚注列出参考文献　    %
+%                                                                 %
+% !! chapterbib 只有当 Book & chapter 状态下有效/ Article 状态下全文不会有错，但分割正文会报错 !! %
+%\usepackage[sectionbib]{chapterbib}        %每章节单独参考文献   %
+% !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! %
+\usepackage{hypernat}                                                                          %
+%\usepackage[dvipdfm,bookmarksopen=true,pdfstartview=FitH,CJKbookmarks]{hyperref}              %
+\usepackage[bookmarksopen=true,pdfstartview=FitH,CJKbookmarks]{hyperref}                       %
+\hypersetup{bookmarksnumbered,colorlinks,linkcolor=green,citecolor=blue,urlcolor=red}          %
+%参考文献含有超链接引用时需要下列宏包，注意与natbib有冲突        %
+%\usepackage[dvipdfm]{hyperref}                                  %
+%\usepackage{hypernat}                                           %
+\newcommand{\upcite}[1]{\hspace{0ex}\textsuperscript{\cite{#1}}} %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\AtBeginDvi{\special{pdf:tounicode GBK-EUC-UCS2}} %CTEX用dvipdfmx的话，用该命令可以解决      %
+%						   %pdf书签的中文乱码问题		      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%-- Biblatex --%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%            新版本的BibLaTeX默认使用Biber而非BibTeX进行处理参考文献。                     %
+%\usepackage[backend=bibtex]{biblatex}                                                        %
+%\usepackage[style=authoryear,backend=biber]{biblatex}                                        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{verbatim}			%Verbatim 宏包重新实现了 Verbatim 环境，并且提供一个命令可以导入一个 ASCII 文件到文档中
+%\verbatiminput{filename}
+
+%在beamer里面使用verbatim环境，可以通过在frame的参数里面添加 containsverbatim / fragile来解决，不过 containsverbatim 会导致pause失效
+%\begin{frame}[containsverbatim] %也可以用 \begin{frame}[fragile]
+%	\begin{verbatim}
+%	\usepackage{xcolor}
+%	TEST
+%	\end{verbatim}
+%\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%  % 段落缩进   %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%       首行缩进   %%%%%%%%%%%
+%\setlength{\parindent}{2em}{     %
+%首行缩进2em的段落(可跨段落)      %
+%}                                %
+%%\CJKindent    %中文首行缩进     %
+%---------------------------------%
+%%%%%%%%%%% 取消多段首行缩进%%%%%%%%%%%%%%%
+%\setlength{\parindent}{0pt}{             %
+% 取消缩进段落(可跨段落)                  %
+%}                                        %
+%-----------------------------------------------------------------%
+%%%%%%%%%%% 悬挂缩进 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%\noindent                      %1. 取消⾸⾏缩进                  %
+%\hangafter=1                   %2. 设置从第１⾏之后开始悬挂缩进  %
+%\setlength{\hangindent}{2em}   %3. 设置悬挂缩进量                %
+%{ 悬挂缩进段落(不可跨段落)                                       %
+%}                                                                %
+%-----------------------------------------------------------------%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! %
+%%%%%%%%%%%%%%%%%%%  说戏剧本集特殊设置   %%%%%%%%%%%%%%%%%%%%%%
+\setcounter{secnumdepth}{0} % 此处设置
+\usepackage[center]{titlesec}
+\setcounter{tocdepth}{2}
+\newcommand{\spacept}[2]{#1\hspace{#2}} %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+

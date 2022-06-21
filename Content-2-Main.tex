@@ -1,0 +1,165 @@
+\newpage	        % 每个新的/newpage 即可有新的\thispagestyle 引领       %
+%\thispagestyle{fancy}   % 插入页眉页脚                                        %
+
+%%%%---%%%%%%---- The Main Body OF THE PAPER ----%%%%%----%%%%%
+%\chapter{第一章} %%\Doucmentclass{book}时可以用
+%\section{正文章节}
+
+%参考文献的引用方式1\upcite{QCQC_2014}
+
+%------------%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%------------%
+
+\pagenumbering{arabic}
+%\include{Data/chap-01}
+%\include{Data/chap-02}
+%\include{Data/chap-03}
+%\include{Data/chap-04}
+%\include{Data/chap-05}
+%\include{Data/chap-06}
+%\include{Data/chap-07}
+%\include{Data/chap-08}
+%\include{Data/chap-09}
+
+%----------------------------------------------------------------------------------------------------------------------------------------------------%
+
+
+
+%---%%%%%%%%%%%-----The Figure Of The Paper-----%%%%%%%%%----
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[height=3.35in,width=2.85in,viewport=0 0 400 475,clip]{PbTe_Band_SO.eps}
+%\hspace{0.5in}
+%\includegraphics[height=3.35in,width=2.85in,viewport=0 0 400 475,clip]{EuTe_Band_SO.eps}
+%\caption{\small Band Structure of PbTe (a) and EuTe (b).}%(与文献\cite{EPJB33-47_2003}图1对比)
+%\label{Pb:EuTe-Band_struct}
+%\end{figure}
+%------------%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%------------%
+
+%--%%%%%%%%%%%------The Equation Of The Paper-----%%%%%%%%%---%
+%\begin{equation}
+%\varepsilon_1(\omega)=1+\frac2{\pi}\mathscr P\int_0^{+\infty}\frac{\omega'\varepsilon_2(\omega')}{\omega'^2-\omega^2}d\omega'
+%\label{eq:magno-1}
+%\end{equation}
+
+%\begin{equation} 
+%\begin{split}
+%\varepsilon_2(\omega)&=\frac{e^2}{2\pi m^2\omega^2}\sum_{c,v}\int_{BZ}d{\vec k}\left|\vec e\cdot\vec M_{cv}(\vec k)\right|^2\delta [E_{cv}(\vec k)-\hbar\omega] \\
+% &= \frac{e^2}{2\pi m^2\omega^2}\sum_{c,v}\int_{E_{cv}(\vec k=\hbar\omega)}\left|\vec e\cdot\vec M_{cv}(\vec k)\right|^2\dfrac{dS}{\nabla_{\vec k}E_{cv}(\vec k)}
+% \end{split}
+%\label{eq:magno-2}
+%\end{equation}
+%------------%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%------------%
+
+%---%%%%%%%%%%%-----The Table Of The Paper----%%%%%%%%%%%%%---%
+%\begin{table}[!h]
+%\tabcolsep 0pt \vspace*{-12pt}
+%%\caption{The representative $\vec k$ points contributing to $\sigma_2^{xy}$ of interband transition in EuTe around 2.5 eV.}
+%\label{Table-EuTe_Sigma}
+%\begin{minipage}{\textwidth}
+%%\begin{center}
+%\centering
+%\def\temptablewidth{0.84\textwidth}
+%\rule{\temptablewidth}{1pt}
+%\begin{tabular*} {\temptablewidth}{|@{\extracolsep{\fill}}c|@{\extracolsep{\fill}}c|@{\extracolsep{\fill}}l|}
+
+%-------------------------------------------------------------------------------------------------------------------------
+%&Peak (eV)  & {$\vec k$}-point            &Band{$_v$} to Band{$_c$}  &Transition Orbital
+%Components\footnote{波函数主要成分后的括号中，$5s$、$5p$和$5p$、$4f$、$5d$分别指碲和铕的原子轨道。} &Gap (eV)   \\ \hline
+%-------------------------------------------------------------------------------------------------------------------------
+%&2.35       &(0,0,0)         &33$\rightarrow$34    &$4f$(31.58)$5p$(38.69)$\rightarrow$$5p$      &2.142   \\% \cline{3-7}
+%&       &(0,0,0)         &33$\rightarrow$34    &$4f$(31.58)$5p$(38.69)$\rightarrow$$5p$      &2.142   \\% \cline{3-7}
+%-------------------------------------------------------------------------------------------------------------------------
+%\end{tabular*}
+%\rule{\temptablewidth}{1pt}
+%\end{minipage}{\textwidth}
+%\end{table}
+%------------%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%------------%
+
+%---%%%%%%%%%%%-----The Long Table Of The Paper---%%%%%%%%%%%%----%
+%\begin{small}
+%%\begin{minipage}{\textwidth}
+%%\begin{longtable}[l]{|c|c|cc|c|c|} %[c]指定长表格对齐方式
+%\begin{longtable}[c]{|c|c|p{1.9cm}p{4.6cm}|c|c|}
+%\caption{Assignment for the peaks of EuB$_6$}
+%\label{tab:EuB6-1}\\ %\\长表格的caption中换行不可少
+%\hline
+%%
+%--------------------------------------------------------------------------------------------------------------------------------
+%\multicolumn{2}{|c|}{\bfseries$\sigma_1(\omega)$谱峰}&\multicolumn{4}{c|}{\bfseries部分重要能带间电子跃迁\footnotemark}\\ \hline
+%\endfirsthead
+%--------------------------------------------------------------------------------------------------------------------------------
+%%
+%\multicolumn{6}{r}{\it 续表}\\
+%\hline
+%--------------------------------------------------------------------------------------------------------------------------------
+%标记 &峰位(eV) &\multicolumn{2}{c|}{有关电子跃迁} &gap(eV)  &\multicolumn{1}{c|}{经验指认} \\ \hline
+%\endhead
+%--------------------------------------------------------------------------------------------------------------------------------
+%%
+%\multicolumn{6}{r}{\it 续下页}\\
+%\endfoot
+%\hline
+%--------------------------------------------------------------------------------------------------------------------------------
+%%
+%%\hlinewd{0.5$p$t}
+%\endlastfoot
+%--------------------------------------------------------------------------------------------------------------------------------
+%%
+%% Stuff from here to \endlastfoot goes at bottom of last page.
+%%
+%--------------------------------------------------------------------------------------------------------------------------------
+%标记 &峰位(eV)\footnotetext{见正文说明。} &\multicolumn{2}{c|}{有关电子跃迁\footnotemark} &gap(eV) &\multicolumn{1}{c|}{经验指认\upcite{PRB46-12196_1992}}\\ \hline
+%--------------------------------------------------------------------------------------------------------------------------------
+%
+%     &0.07 &\multicolumn{2}{c|}{电子群体激发$\uparrow$} &--- &电子群\\ \cline{2-5}
+%\raisebox{2.3ex}[0pt]{$\omega_f$} &0.1 &\multicolumn{2}{c|}{电子群体激发$\downarrow$} &--- &体激发\\ \hline
+%--------------------------------------------------------------------------------------------------------------------------------
+%
+%     &1.50 &\raisebox{-2ex}[0pt][0pt]{20-22(0,1,4)} &2$p$(10.4)4$f$(74.9)$\rightarrow$ &\raisebox{-2ex}[0pt][0pt]{1.47} &\\%\cline{3-5}
+%     &1.50$^\ast$ & &2$p$(17.5)5$d_{\mathrm E}$(14.0)$\uparrow$ & &4$f$$\rightarrow$5$d_{\mathrm E}$\\ \cline{3-5}
+%     \raisebox{2.3ex}[0pt][0pt]{$a$} &(1.0$^\dagger$) &\raisebox{-2ex}[0pt][0pt]{20-22(1,2,6)} &\raisebox{-2ex}[0pt][0pt]{4$f$(89.9)$\rightarrow$2$p$(18.7)5$d_{\mathrm E}$(13.9)$\uparrow$}\footnotetext{波函数主要成分后的括号中，2$s$、2$p$和5$p$、4$f$、5$d$、6$s$分别指硼和铕的原子轨道；5$d_{\mathrm E}$、5$d_{\mathrm T}$分别指铕的(5$d_{z^2}$，5$d_{x^2-y^2}$和5$d_{xy}$，5$d_{xz}$，5$d_{yz}$)轨道，5$d_{\mathrm{ET}}$(或5$d_{\mathrm{TE}}$)则指5个5$d$轨道成分都有，成分大的用脚标的第一个字母标示；2$ps$(或2$sp$)表示同时含有硼2$s$、2$p$轨道成分，成分大的用第一个字母标示。$\uparrow$和$\downarrow$分别标示$\alpha$和$\beta$自旋电子跃迁。} &\raisebox{-2ex}[0pt][0pt]{1.56} &激子跃迁。 \\%\cline{3-5}
+%     &(1.3$^\dagger$) & & & &\\ \hline
+%--------------------------------------------------------------------------------------------------------------------------------
+
+%     & &\raisebox{-2ex}[0pt][0pt]{19-22(0,0,1)} &2$p$(37.6)5$d_{\mathrm T}$(4.5)4$f$(6.7)$\rightarrow$ & & \\\nopagebreak %\cline{3-5}
+%     & & &2$p$(24.2)5$d_{\mathrm E}$(10.8)4$f$(5.1)$\uparrow$ &\raisebox{2ex}[0pt][0pt]{2.78} &a、b、c峰可能 \\ \cline{3-5}
+%     & &\raisebox{-2ex}[0pt][0pt]{20-29(0,1,1)} &2$p$(35.7)5$d_{\mathrm T}$(4.8)4$f$(10.0)$\rightarrow$ & &包含有复杂的\\ \nopagebreak%\cline{3-5}
+%     &2.90 & &2$p$(23.2)5$d_{\mathrm E}$(13.2)4$f$(3.8)$\uparrow$ &\raisebox{2ex}[0pt][0pt]{2.92} &强激子峰。$^{\ast\ast}$\\ \cline{3-5}
+%$b$  &2.90$^\ast$ &\raisebox{-2ex}[0pt][0pt]{19-22(0,1,1)} &2$p$(33.9)4$f$(15.5)$\rightarrow$ & &B2$s$-2$p$的价带 \\ \nopagebreak%\cline{3-5}
+%     &3.0 & &2$p$(23.2)5$d_{\mathrm E}$(13.2)4$f$(4.8)$\uparrow$ &\raisebox{2ex}[0pt][0pt]{2.94} &顶$\rightarrow$B2$s$-2$p$导\\ \cline{3-5}
+%     & &12-15(0,1,2) &2$p$(39.3)$\rightarrow$2$p$(25.2)5$d_{\mathrm E}$(8.6)$\downarrow$ &2.83 &带底跃迁。\\ \cline{3-5}
+%     & &14-15(1,1,1) &2$p$(42.5)$\rightarrow$2$p$(29.1)5$d_{\mathrm E}$(7.0)$\downarrow$ &2.96 & \\\cline{3-5}
+%     & &13-15(0,1,1) &2$p$(40.4)$\rightarrow$2$p$(28.9)5$d_{\mathrm E}$(6.6)$\downarrow$ &2.98 & \\ \hline
+%--------------------------------------------------------------------------------------------------------------------------------
+%%\hline
+%%\hlinewd{0.5$p$t}
+%\end{longtable}
+%%\end{minipage}{\textwidth}
+%%\setlength{\unitlength}{1cm}
+%%\begin{picture}(0.5,2.0)
+%%  \put(-0.02,1.93){$^{1)}$}
+%%  \put(-0.02,1.43){$^{2)}$}
+%%\put(0.25,1.0){\parbox[h]{14.2cm}{\small{\\}}
+%%\put(-0.25,2.3){\line(1,0){15}}
+%%\end{picture}
+%\end{small}
+%-------------%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-------------%
+
+%-----%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-----直-接-插-入-文-件-----%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%------%
+%\textcolor{red}{\textbf{直接插入文件}}:\verbatiminput{/home/jun_jiang/Documents/Latex_art_beamer/Daily_WORKS/Report-2020_model.tex} %为保险:~选用文件名绝对路径
+%\textcolor{red}{\textbf{备忘录}}:\verbatiminput{/home/jun_jiang/Documents/备忘录.txt}
+%--------------------------------------%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%----------------------------------%
+
+%-----------------------------------------------The Bibliography of The Papart------------------------------------%
+%%%%%% 没有 \chapterbib 时仍然可以每个章节都出现参考文献~(\thebibliography 模式)~，但意义不大
+%\phantomsection\addcontentsline{toc}{subsection}{Bibliography} %直接调用\addcontentsline命令可能导致超链指向不准确,一般需要在之前调用一次\phantomsection命令加以修正%
+
+
+%\begin{thebibliography}{99}		            %
+%\input{Content-4-Bibliography}                     %
+%\end{thebibliography}			            %
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%----------------------------------------------------------------------------------------------------------------------------------------------------%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
