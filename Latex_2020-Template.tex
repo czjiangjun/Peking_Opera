@@ -1,5 +1,8 @@
-\documentclass[12pt, oneside, AutoFakeBold, a4paper]{article}      % Specifies the document class
+\documentclass[11.5pt, oneside, AutoFakeBold, a4paper]{article}      % Specifies the document class
+%\documentclass[11.5pt, oneside, a4paper]{article}      % Specifies the document class
 %\documentclass[10pt, twoside, a4paper]{article}      % Specifies the document class
+%\documentclass[10pt, oneside, a4paper]{book}      % Specifies the document class
+%AutoFakeBold 克服汉字加粗问题
 
 %---------%%%%%%%%%%%%%%%%--------xeCJK下设置中文字体-----------%%%%%%%%%%%%%%%%%%-----------%  
 \include{Template_Preamble}                                                                  %
@@ -14,7 +17,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%  % 插图使用位置  %%%%%%%%%%%%%%%%%%%%%%%%%%%
-\graphicspath{{Figures/}}                            %
+\graphicspath{{Figures/}}                                        %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
@@ -23,11 +26,12 @@
 \include{Author}								    	     %
 %\include*{Author}								    	     %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %
 %----------------------------------------------------------------------------------------------------------------------------------------------------%
 %
 %%%%------The Abstract and the keywords of The Paper-------%%%%
-\include{Content-0-Abstract}                        	      %
+%\include{Content-0-Abstract}                        	      %
 %\include*{Content-0-Abstract}                        	      %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -44,11 +48,11 @@
 %-----%%%%%%%----Main Body of The Paper----%%%%%%%%%%---------%
 \include{Content-2-Main}                            	      %
 %--------%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%--------%
-%
-%%%%%%%%%%  FOR TEST %%%%%%%%%%%%
-\include{Data/chap-01-04}       %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%%%%%%%%%%  FOR TEST %%%%%%%%%%%%
+\include{Data/chap-01-04}         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
 %----------------------------------------------------------------------------------------------------------------------------------------------------%
 %
 %----%%%%%%%%%%%%----The Bibliographyge----%%%%%%%%%%%%%%-----%
