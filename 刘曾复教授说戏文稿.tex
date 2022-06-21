@@ -1,6 +1,7 @@
 \documentclass[12pt, oneside, AutoFakeBold, a4paper]{article}      % Specifies the document class
 %\documentclass[10pt, twoside, a4paper]{article}      % Specifies the document class
 
+\usepackage{ctex}
 %%%%%%%%%%%%%%%%% CJK 中文版面控制  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\usepackage{CJK} % CTEX-CJK 中文支持                            %
 \usepackage{xeCJK} % seperate the english and chinese		 %
@@ -295,9 +296,9 @@
 %The content of the abstract
 %\end{abstract}
 
-\include{Data/chap-Photoes}
+%\include{Data/chap-Photoes}
 
-\include{Data/chap-illustration}
+%\include{Data/chap-Illustration}
 %-------------------------------------------------------------------------------The Content of The Paper----------------------------------------------------------------------------------------------%
 \newpage
 \pagestyle{plain}   % 删除页眉                                        %
@@ -310,7 +311,7 @@
 
 %\section{Introduction}
 %导言
-\include{Data/chap-introduction}
+\include{Data/chap-Instruction}
 
 %\section{正文章节}
 %参考文献的引用方式1\upcite{QCQC_2014}
@@ -464,7 +465,7 @@
 %\thispagestyle{fancy}   % 首页插入页眉页脚 
 %\section{致谢}
 
-%\include{Data/chap-acknowledge}
+\include{Data/chap-acknowledge}
 
 %致谢内容
 %-----------------------------------------------------------------------------------------------------------------------------------------------------------------------%
