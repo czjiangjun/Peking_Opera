@@ -16,3 +16,5 @@ cp $1 ./$file_back
 
 sed 's/\ 【二/\ 【{\\akai\ 二/g' $file_back | sed 's/板】/板}】/g' > $file_mid
 sed 's/\ 【西/\ 【{\\akai\ 西/g' $file_mid | sed 's/眼】/眼}】/g' > $file_mod
+sed 's/\ 【四平调】/\ 【{\\akai\ 四平调}】/g' $file_mod > $file_mid
+sed 's/\ 【转/\ 【{\\small 转}{\\akai\ /g' $file_mid > $file_mod
