@@ -10,21 +10,19 @@ from collections import Counter
 def __version__():
     return '0.0.1'
 
-def get_poscar(NUM, REMOVE_I):
-    move=[]
+def get_footnote(Orig_File):
     i=0
-    j=0
-    k=0 
-    openFileCON=open('../CONTCAR','r') 
-    openFilePOS=open('../POSCAR','r') 
-    writeFileHandle=open('Temp','w') 
-#    execu1="sed -n 6p POSCAR | wc -w > "
-#    NUM_ATOM=os.system(execu1)
-#    print NUM_ATOM
+    openFileTEX = open(Orig_File,'r') 
+    line=openFileTEX.readline()
+    linecontent=line.strip('\r\n')
+    if linecontent == 'item' :
+        if (linecontent.strip('\\').[1] == 'leavevmode'):
+            i = i+1
+            footnote_1 = openFileTEX.readline('\r\n')
 
-    while 1:
-        line=openFileCON.readline()
-        line=line.strip('\r\n')
+       
+
+
         lineapp=openFilePOS.readline()
         lineapp=lineapp.strip('\r\n')
         atom_mov=lineapp.split()
@@ -222,7 +220,7 @@ PREC=Accurate """
     return
 
 
-def get_Potential(ELEMENTS):
+def get_Potential(Input_File):
     DFT_XC=raw_input (' The XC of POTCAR generate by: ')
     if DFT_XC == '':
         DFT_XC='PBE'
@@ -311,78 +309,8 @@ if __name__ == "__main__":
 #    os.rename('POTCAR', 'POTCAR_orig')
 #    os.rename('INCAR', 'INCAR_orig')
 #    os.rename('KPOINTS', 'KPOINTS_orig')
-    j=0
-    args = parse_argument()
-    NUM1 = args.Position_Num
-#    NUM2 = args.Atom_Num
 
-    if j>=int(NUM1[0]):
-        sys.stderr.write("[ERROR]:!!! THE NUMBER OF ADDED_ALLOY IS NOT GIVEN: !!! \n") 
-        os._exit(-1)
+     footnotelist, Num = get_footnote(Orig_TEX)
 
-    ADD_ELEMENT, NUM2 = get_Element()
-    while (j< int(NUM1[0])):
-        DIR_ALLOY="ALLOY_"+str(int(j)+1)
-        DIRTEST=os.path.isdir(DIR_ALLOY)
-        if (not DIRTEST):
-            os.mkdir(DIR_ALLOY)
-        os.chdir(DIR_ALLOY)
-
-        j=j+1
-        NUM3=get_Position_Info() 
-#        print NUM3
-
-        i=0
-        REPLACE_ATOM = get_Index(NUM3[0])
-#        print "%d" %REPLACE_ATOM[0]
-
-        if NUM2 > 0:
-#           if ADD_ELEMENTS in ELEMENTS
-#           print "%s" %ADD_ELEMENT
-
-           while i< NUM2: 
-               DIR_REPLACE="Alloy_"+str(ADD_ELEMENT[i])
-               DIRTEST=os.path.isdir(DIR_REPLACE)
-               if (not DIRTEST):
-                   os.mkdir(DIR_REPLACE) 
-               print DIR_REPLACE
-               shutil.copy('../POSCAR',DIR_REPLACE)
-#              shutil.copy ('KPOINTS', DIR_REPLACE)
-#              shutil.copy ('INCAR', DIR_REPLACE)
-
-               os.chdir(DIR_REPLACE)
-#              execu1="sed -i 's/ISTART=1/ISTART=0/' INCAR"
-#              os.system(execu1)
-
-               ELEMENTS=replace_position(REPLACE_ATOM, NUM3, ADD_ELEMENT[i])
-               print_Incar(ELEMENTS)
-               print_Kpoint()
-#       print "%s" %ELEMENTS
-               if (j==1): 
-                   get_Potential(ELEMENTS)
-               else:
-                   poten_exist="../../ALLOY_1/Alloy_"+str(ADD_ELEMENT[i])+"/POTCAR"
-                   shutil.copy(poten_exist, ".")
-
-
-               os.remove('POSCAR')
-               os.rename('Temp','POSCAR')
-
-               bjob_bash=get_exe_file()
-               mpirun_command="bsub "+bjob_bash
-##           print mpirun_command
-#               os.system(mpirun_command)
-
-               i=i+1
-
-               os.chdir('../')
-        else:
-           get_poscar(REPLACE_ATOM, NUM3)
-#           sys.stderr.write("[ERROR]:!!! THE ELEMENTS IS NOT Given: !!! \n")
-#           os._exit(-1)
-#           os.remove('POSCAR')
-           os.rename('Temp','POSCAR_NEW')
-
-        os.chdir('../')
 
 print "All Done!"
