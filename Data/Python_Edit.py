@@ -22,7 +22,7 @@ def Filelines(Target_File):
         i = i+1
     return i-1
        
-def get_footnote(Lines, Orig_File,dict_foot):
+def Get_footnote(Lines, Orig_File,dict_foot):
 
     openFileTEX = open(Orig_File,'r') 
 #    line = openFileTEX.readline()
@@ -47,16 +47,18 @@ def get_footnote(Lines, Orig_File,dict_foot):
                   if (footitem !='\\item'):
                      footnote_i = footnote_i + footitem
 #            j = j+1
+            footnote_i=footnote_i.split('\\protect\\hyperlink{fnref')[-2]
 #            print(i, footnote_i)
             dict_foot.update({i:footnote_i})
 #
 #    print (dict_foot[222])
     return i
 
-def point_footnote(Lines, Target_File, dict_foot):
+def Point_footnote(Lines, Target_File, Target_File_mod, dict_foot):
 
     footnote_mark = '\\footnote{'
-    openFileTEX = open(Target_File,'r+') 
+    openFileTEX = open(Target_File,'r') 
+    openTarTEX = open(Target_File_mod,'w') 
 #    line = openFileTEX.readline()
     i = 0
     for l in range(Lines):
@@ -65,20 +67,53 @@ def point_footnote(Lines, Target_File, dict_foot):
 #        i = i+1
         if (line_i == '\\item'):
             break
-        linecomm_orig = line_i.split('}{\\textsuperscript{')
+        linecomm_orig = line_i.split('}{\\textsuperscript')
         if len(linecomm_orig) > 1:
+            test = ''
             for i in linecomm_orig:
 #                print (i[-6:])
                 j = i.split('\\protect')
                 if (len(j)>1):
                    k = j[-1].split('fn')[-1]
 #                   print(dict_foot[int(k)])
-                   i = i[:-7]+footnote_mark + dict_foot[int(k)]+'}'
+                   i = i[:-7]+footnote_mark+dict_foot[int(k)]
 #                   print(i)
-       for element 
+                test = test + i   
+#       for element 
+            line = test +'\n'
+#            print(line)
+        openTarTEX.write(line)
                   
-
     return
+
+def Exec_shell(Shell_command, Target_File):
+    Shell_Exe = Shell_command+' '+ Target_File
+
+    print (Shell_Exe)
+    os.system(Shell_Exe)
+    return
+
+def Setseper(Lines, Target_File, Target_File_mod):
+    Seper1 ='\\hspace{40pt}~'
+    Seper2 ='\\hspace{30pt}~'
+    Seper3 ='\\hspace{20pt}~'
+    Seper4 ='\\hspace{10pt}~'
+
+    openFileTEX = open(Target_File,'r') 
+    openTarTEX = open(Target_File_mod,'w') 
+    for l in range(Lines):
+        line = openFileTEX.readline()
+        line_i = line.strip('\r\n')
+        linecomm_orig = line_i.split('\\ ')
+        linecomm_orig[0] = linecomm_orig[0]+Seper1
+        test = ''
+        for i in linecomm_orig:
+            test = test+i
+        line =test+'\n'
+        openTarTEX.write(line)
+    return
+
+
 
 #   MAIN
 if __name__ == "__main__":
@@ -91,12 +126,20 @@ if __name__ == "__main__":
      Footnote_Dict ={}
      Num = 0
      Lines = Filelines(Orig_TEX)
-     Num = get_footnote(Lines, Orig_TEX, Footnote_Dict)
+     Num = Get_footnote(Lines, Orig_TEX, Footnote_Dict)
 
      Lines = Filelines(Orig_TEX)
      Tar_TEX = 'chap-02.tex'
-     point_footnote(Lines, Tar_TEX, Footnote_Dict)
+     File_name = Tar_TEX.split('.')
+     Tar_mod_TEX = File_name[0]+ '_mod.'+ File_name[1]
+     Point_footnote(Lines, Tar_TEX, Tar_mod_TEX, Footnote_Dict)
 
+     Shell_com = './Script.sh'
+     Exec_shell(Shell_com, Tar_mod_TEX)
+
+   #  Setseper(Lines, Tar_TEX, Tar_mod_TEX)
+
+     
 #     print (Footnote_Dict)
 #     print (Num)
 
