@@ -10,12 +10,24 @@ from collections import Counter
 def __version__():
     return '0.0.1'
 
-def get_footnote(Orig_File,dict_foot):
+def Filelines(Target_File):
+
+    openFileTEX = open(Target_File,'r') 
+    i = 0
+    done = 0
+    while (not done):
+        line = openFileTEX.readline()
+        if line =='':
+            done = 1
+        i = i+1
+    return i-1
+       
+def get_footnote(Lines, Orig_File,dict_foot):
 
     openFileTEX = open(Orig_File,'r') 
-    line = openFileTEX.readline()
+#    line = openFileTEX.readline()
     i = 0
-    while line:
+    for l in range(Lines):
         line = openFileTEX.readline()
         linecontent = line.strip()
         linefoot = linecontent.strip('\r\n').split('\\')
@@ -41,8 +53,32 @@ def get_footnote(Orig_File,dict_foot):
 #    print (dict_foot[222])
     return i
 
-       
+def point_footnote(Lines, Target_File, dict_foot):
 
+    footnote_mark = '\\footnote{'
+    openFileTEX = open(Target_File,'r+') 
+#    line = openFileTEX.readline()
+    i = 0
+    for l in range(Lines):
+        line = openFileTEX.readline()
+        line_i = line.strip('\r\n')
+#        i = i+1
+        if (line_i == '\\item'):
+            break
+        linecomm_orig = line_i.split('}{\\textsuperscript{')
+        if len(linecomm_orig) > 1:
+            for i in linecomm_orig:
+#                print (i[-6:])
+                j = i.split('\\protect')
+                if (len(j)>1):
+                   k = j[-1].split('fn')[-1]
+#                   print(dict_foot[int(k)])
+                   i = i[:-7]+footnote_mark + dict_foot[int(k)]+'}'
+#                   print(i)
+       for element 
+                  
+
+    return
 
 #   MAIN
 if __name__ == "__main__":
@@ -54,10 +90,12 @@ if __name__ == "__main__":
 
      Footnote_Dict ={}
      Num = 0
-     Num = get_footnote(Orig_TEX, Footnote_Dict)
+     Lines = Filelines(Orig_TEX)
+     Num = get_footnote(Lines, Orig_TEX, Footnote_Dict)
 
-     Tar_Tex = 'chap-02.tex'
-#     point_footnote(Tar_TEX)
+     Lines = Filelines(Orig_TEX)
+     Tar_TEX = 'chap-02.tex'
+     point_footnote(Lines, Tar_TEX, Footnote_Dict)
 
 #     print (Footnote_Dict)
 #     print (Num)
