@@ -129,13 +129,16 @@ if __name__ == "__main__":
      Num = Get_footnote(Lines, Orig_TEX, Footnote_Dict)
 
      Lines = Filelines(Orig_TEX)
-     Tar_TEX = 'chap-02.tex'
-     File_name = Tar_TEX.split('.')
-     Tar_mod_TEX = File_name[0]+ '_mod.'+ File_name[1]
-     Point_footnote(Lines, Tar_TEX, Tar_mod_TEX, Footnote_Dict)
 
-     Shell_com = './Script.sh'
-     Exec_shell(Shell_com, Tar_mod_TEX)
+     for i in range(1,10):
+
+         Tar_TEX = 'chap-0'+str(i) +'.tex'
+         File_name = Tar_TEX.split('.')
+         Tar_mod_TEX = File_name[0]+ '_mod.'+ File_name[1]
+         Point_footnote(Lines, Tar_TEX, Tar_mod_TEX, Footnote_Dict)
+
+         Shell_com = './Script.sh'
+         Exec_shell(Shell_com, Tar_mod_TEX)
 
    #  Setseper(Lines, Tar_TEX, Tar_mod_TEX)
 
