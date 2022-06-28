@@ -130,14 +130,22 @@ if __name__ == "__main__":
 
      Lines = Filelines(Orig_TEX)
 
+     state = sys.argv[1]
+     if (state == '1'):
+         Shell_com = './Script_Single.sh'
+         mod_state = '_Single.'
+     else:
+         Shell_com = './Script_Multi.sh'
+         mod_state = '_Multi.'
+
      for i in range(1,10):
 
          Tar_TEX = 'chap-0'+str(i) +'.tex'
          File_name = Tar_TEX.split('.')
-         Tar_mod_TEX = File_name[0]+ '_mod.'+ File_name[1]
+         Tar_mod_TEX = File_name[0]+ mod_state + File_name[1]
          Point_footnote(Lines, Tar_TEX, Tar_mod_TEX, Footnote_Dict)
 
-         Shell_com = './Script.sh'
+
          Exec_shell(Shell_com, Tar_mod_TEX)
 
    #  Setseper(Lines, Tar_TEX, Tar_mod_TEX)
