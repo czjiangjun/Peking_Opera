@@ -108,6 +108,17 @@
 % !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! %
 %%%%%%%%%%%%%%%%%%%  说戏剧本集特殊设置   %%%%%%%%%%%%%%%%%%%%%%
 \setcounter{secnumdepth}{0} % 此处设置
+%\usepackage{titletoc}
+%\titlecontents{section}[0pt]{\addvspace{2pt}\filright}              
+%{\contentspush{\thecontentslabel\}}              
+%{}{\titlerule*[8pt]{.}\contentspage}
+
+\usepackage{titletoc}
+\contentsmargin{0pt}
+\renewcommand\contentspage{\thecontentspage}
+\dottedcontents{section}[2.3em]{}{2.3em}{5pt}
+\dottedcontents{subsection}[5.5em]{}{3.2em}{5pt}
+
 \usepackage[center]{titlesec}
 \setcounter{tocdepth}{2}
 \newcommand{\spacept}[2]{#1\hspace{#2}~} %
