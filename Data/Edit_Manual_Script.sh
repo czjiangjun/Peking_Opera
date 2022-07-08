@@ -16,7 +16,8 @@ file_mod=$var1$var5$var2
 #if [ ! -f $file_back ]; then
 #       cp $1 ./$file_back
 #fi
-cp $1 $file_back
+ mkdir ../Back_up
+ cp $1 ../Back_up/$file_back
 
 var9="hspace{10pt}~"
   sed 's/subsubsection/section*/g' $1  | sed 's/subsection/section/g' | sed 's/\\small{之/{\\small\ 之/g' > $file_mid
