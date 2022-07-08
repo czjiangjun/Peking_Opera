@@ -1,7 +1,7 @@
 #! /bin/bash    
 #/usr/bin/bash
 
-git checkout $1
+# git checkout $1
 var1=`echo $1 | awk -F "." '{print $1}' `
 var2=`echo $1 | awk -F "." '{print $2}' `
 var3="_orig."
@@ -16,16 +16,24 @@ file_mod=$var1$var5$var2
 #if [ ! -f $file_back ]; then
 #       cp $1 ./$file_back
 #fi
- mkdir ../Back_up
- cp $1 ../Back_up/$file_back
+Back_Dir=../Back_up
+ if [ ! -d $Back_Dir ]
+ then
+     mkdir ../Back_up
+#     git checkout $1
+     cp $1 ../Back_up/$file_back
+else
+	cp ../Back_up/$file_back $1
+ fi
 
 var9="hspace{10pt}~"
-  sed 's/subsubsection/section*/g' $1  | sed 's/subsection/section/g' | sed 's/\\small{之/{\\small\ 之/g' > $file_mid
+  sed 's/subsubsection/section*/g' $1  | sed 's/subsection/section/g' | sed 's/\\small{之/{\\small\ 之/g' | sed 's/indent}{56pt/indent}{52pt/g' | sed 's/indent}{52pt}{【/indent}{56pt}{【/g' | sed 's/indent}{52pt}{{【/indent}{56pt}{{【/g' > $file_mid
 #  sed -i '2d' $file_mid
   sed  -i '/phantom/d' $file_mid
   sed -i '/newpage/a\\\phantomsection\ %实现目录的正确跳转'  $file_mid
 
-  mv $file_mid $1 #&& rm -f $fille_back
+  mv $file_mid $1 
+#  cp $file_mid $1 # && rm -f $fille_mid
 
 
  #| sed '\\hspace{[0-9][0-9]pt}\~$//g ' 
