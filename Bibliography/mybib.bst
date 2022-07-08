@@ -1501,6 +1501,8 @@ FUNCTION {mastersthesis}
 { output.bibitem
   format.authors "author" output.check
   new.block
+  format.title output
+  new.block
   bbl.mthesis format.thesis.type output.nonnull
   school "school" bibinfo.warn output
   address "address" bibinfo.check output
