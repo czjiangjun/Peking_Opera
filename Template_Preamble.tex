@@ -17,11 +17,55 @@
 \usepackage{authblk}					 %作者地址和E-mail
 \usepackage{amsmath,amsthm,amsfonts,amssymb,bm}          %数学公式
 \usepackage{mathrsfs}                                    %英文花体
+\usepackage{ifthen}
+\usepackage{enumerate}
+
+\usepackage[subpreambles=true]{standalone} % 启用 standalone 宏包，subpreambles=true 启用独立导言区
+
 \usepackage{tikz}					 %绘制平面图形
+\usetikzlibrary{%
+  decorations,arrows,chains,snakes,
+  angles, quotes, backgrounds,
+  shapes, shadows, patterns, calc,
+  decorations.shapes,
+  decorations.fractals,
+  decorations.markings,
+  decorations.pathmorphing,
+  positioning,fit
+}
+% 定义箭头样式
+%\tikzstyle{arrow} = [thick,->,>=stealth]
+%在最新的 tikz 版本中，应该使用 \tikzset 命令而不是 \tikzstyle
+ \tikzset{
+    arrow/.style = {thick, ->, >=Stealth} % 使用Stealth箭头类型
+}
+
+\usepgfmodule{shapes}
+\usepgfmodule{plot}
+
+\usepackage{pgf}
+\usepackage{pgffor}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+\usepackage{adjustbox}                                   %绘制跨页流程图形
+\newsavebox{\mysavebox}                                  %绘制跨页流程图形
+\newlength{\myrest}                                      %绘制跨页流程图形
+
+%\pgfplotsset{width=10cm,compat=1.9}                     %每个pgfplot图形的大小更改为10cm
+%\usepgfplotslibrary{external}                           %以将图形导出为单独的PDF文件，然后将其导入文档中
+%\tikzexternalize
+\usepackage{pifont}
 %\usepackage[dvipdfmx]{movie15_dvipdfmx} %插入视频
+\usepackage{soul}				% delete line \sout, \xout, \cancel, \bcancel, \xcancel, \cancelto
 \usepackage{xcolor}                                        %使用默认允许使用颜色
+\sethlcolor{yellow}                                        % 设置高亮颜色为黄色
+%\textcolor[rgb]{0.25, 0.5, 0.75}{自定义颜色1}
+%\textcolor[rgb]{0.75, 0.5, 0.25}{自定义颜色2}
 %\usepackage{hyperref} 
 \usepackage{graphicx}
+\usepackage{float}               %将图片定死在某一个位置用(主要支持[htbp!]中的h)
 \usepackage{subfigure}           %图片跨页
 \usepackage{animate}		 %插入动画
 \usepackage{caption}
@@ -32,9 +76,17 @@
 \usepackage{chemformula}
 \usepackage{chemfig}		%化学公式
 
+\usepackage{ulem, cancel}				% delete line \sout, \xout, \cancel, \bcancel, \xcancel, \cancelto
 \usepackage{longtable}                                   %使用长表格
 \usepackage{multirow}
-\usepackage{makecell}		%允许单元格内换行
+\usepackage{makecell}		%允许单元格内换行    % 在指定单元格内用 \makecell[c]{abc \\ def} 实现单元格内换行
+
+\usepackage{booktabs}           %修改表格线段的粗细，可以自定义修改线段粗细
+%\toprule[2pt]                   %表格顶端线粗细设置
+%\midrule[1pt]                   %表格中间线粗细设置
+%\bottomrule[1.8pt]              %表格底端线粗细设置
+
+\usepackage{minted}      % 代码高亮
 
 \usepackage{arydshln}
 \newcommand{\adots}{\mathinner{\mkern2mu%
@@ -76,6 +128,11 @@
 
 \usepackage{verbatim}			%Verbatim 宏包重新实现了 Verbatim 环境，并且提供一个命令可以导入一个 ASCII 文件到文档中
 %\verbatiminput{filename}
+
+\usepackage{calligra}
+
+\colorlet{bodycolor}{black!35!gray!60!brown!98!green}   %设置颜色
+\colorlet{bellycolor}{yellow!70!white!92!green}         %设置颜色
 
 %在beamer里面使用verbatim环境，可以通过在frame的参数里面添加 containsverbatim / fragile来解决，不过 containsverbatim 会导致pause失效
 %\begin{frame}[containsverbatim] %也可以用 \begin{frame}[fragile]
