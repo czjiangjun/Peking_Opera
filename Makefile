@@ -26,10 +26,10 @@ find:
 evince:
 	evince $(MAIN).pdf
 main:
-	xelatex $(MAIN)
+	xelatex -shell-escape $(MAIN)
 	bibtex  $(MAIN) 
-	xelatex $(MAIN)
-	xelatex $(MAIN)
+	xelatex -shell-escape $(MAIN)
+	xelatex -shell-escape $(MAIN)
 
 all: main evince clean
 
